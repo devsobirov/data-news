@@ -1,0 +1,67 @@
+Yangilik sayti yaratish: 
+
+1. Papkalar strukturasi
+    -config
+    -assets
+    -admin
+    index.php
+2.Mysql M.bazasini tayyorlash garak
+    "datanews"
+    1.users - foydalanuvchilarni saqlaydi (admin)
+        -id
+        -name
+        -email
+        -password
+
+    2.categories - yangiliklar kategoriyalari
+        - id -> AI,PK
+        - name
+        - image
+        -description ->nullable
+
+    3. articles - yangiliklarni saqlaydi
+        - id -> AI,PK
+        - category_id - yangilik qaysi kategoriyaga tegishli ekanini bildiradi -> (INT)
+        - title - yangilik sarlavhasi (Varchar)
+        - image - yangilikning asosiy rasmi (Varchar)
+        - short_story - yangilik qisqa ma'lumoti (Varchar)
+        - full_story - yangilik to'liq ma'lumoti (TEXT)
+        - created_at - yaratilgan vaqti (timestamps)
+
+        // qo'shimcha maydonlar: 
+        - published - yangilikni chop etilgan yoki yoqligini aniqlaydi
+            ->true - chop qilingan
+            ->false - chernovik
+        - top - yangilik top yoki oddiyligini belgilaydi (BOOLEAN)
+            ->true - top yangilik
+            ->false,null - oddiy yangilik
+        - viewed - yangilik necha marta ko'rilgani (INT)
+
+
+
+3.Saytni avtorizatsiya va admin qismini yaratish
+
+
+_______________
+
+1.Авторизацияни амалга ошириш
+- parol shifrlanmagan
+2. База Данных ишлашни бошлаш
+-+++
+
+3. Kategoriyalar CRUD yaratish
+    Sahifalar: 
+        1. index.php :
+         - kategoriyalar jadvali
+         - yangi yaratish sahifasi uchun havola
+         - tahrirlash sahifasi uchun havola
+        2. create.php
+        3. edit.php
+    Turlari :
+        1. O'zbekiston
+        2. Jahon
+        3. Siyosat
+        4. Madaniyat
+        5. Sport
+
+
